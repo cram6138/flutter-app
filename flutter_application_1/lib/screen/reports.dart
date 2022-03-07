@@ -11,7 +11,7 @@ class _ReportsState extends State<Reports> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Reports"),
-        backgroundColor: Colors.green,
+        backgroundColor: const Color.fromARGB(255, 15, 68, 112),
       ),
       body: const Center(
         child: Text("Reports Page"),

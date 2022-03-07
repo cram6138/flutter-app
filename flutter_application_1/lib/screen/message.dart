@@ -11,7 +11,7 @@ class _MessageState extends State<Message> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Message"),
-        backgroundColor: Colors.green,
+        backgroundColor: const Color.fromARGB(255, 15, 68, 112),
       ),
       body: const Center(
         child: Text("Message Page"),

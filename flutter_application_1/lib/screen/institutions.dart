@@ -11,7 +11,7 @@ class _InstitutionsState extends State<Institutions> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Institutions"),
-        backgroundColor: Colors.green,
+        backgroundColor: const Color.fromARGB(255, 15, 68, 112),
       ),
       body: const Center(
         child: Text("Institutions Page"),
