@@ -8,6 +8,36 @@ class LoginForm extends StatefulWidget {
 }
 
 class _LoginFormState extends State<LoginForm> {
+  final myController = TextEditingController();
+  String? username;
+  String? pass;
+
+  @override
+  void dispose() {
+    // Clean up the controller when the widget is disposed.
+    myController.dispose();
+    super.dispose();
+  }
+
+  void showDialogBox() {
+    showDialog(
+        context: context,
+        builder: (BuildContext context) {
+          return new AlertDialog(
+            title: Text("Error"),
+            content: Text("Username/Password is not valid. Please try again"),
+            actions: [
+              ElevatedButton.icon(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: const Icon(Icons.ads_click),
+                  label: const Text("Ok")),
+            ],
+          );
+        });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -52,25 +82,36 @@ class _LoginFormState extends State<LoginForm> {
                   children: [
                     Container(
                       margin: const EdgeInsets.only(left: 16, right: 32),
-                      child: const TextField(
-                        decoration: InputDecoration(
+                      child: TextField(
+                        decoration: const InputDecoration(
                           hintStyle: TextStyle(fontSize: 20),
                           border: InputBorder.none,
                           icon: Icon(Icons.account_circle_rounded),
                           hintText: "Username",
                         ),
+                        controller: myController,
+                        onChanged: (value) {
+                          setState(() {
+                            this.username = value;
+                          });
+                        },
                       ),
                     ),
                     Container(
                       margin: const EdgeInsets.only(left: 16, right: 32),
-                      child: const TextField(
+                      child: TextField(
                         obscureText: true,
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                           hintStyle: TextStyle(fontSize: 22),
                           border: InputBorder.none,
                           icon: Icon(Icons.account_circle_rounded),
                           hintText: "********",
                         ),
+                        onChanged: (value) {
+                          setState(() {
+                            this.pass = value;
+                          });
+                        },
                       ),
                     ),
                   ],
@@ -103,7 +144,12 @@ class _LoginFormState extends State<LoginForm> {
                   ),
                   child: IconButton(
                     onPressed: () {
-                      Navigator.popAndPushNamed(context, "/home");
+                      if (this.username == "cram6138@gmail.com" &&
+                          this.pass == "Hello@21") {
+                        Navigator.popAndPushNamed(context, "/home");
+                      } else {
+                        showDialogBox();
+                      }
                     },
                     focusColor: Colors.red,
                     icon: const Icon(Icons.arrow_forward_outlined),

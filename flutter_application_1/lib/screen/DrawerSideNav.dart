@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+import 'package:flutter_application_1/screen/dialog.dart';
 
 final List<String> imgList = [
   'https://images.unsplash.com/photo-1520342868574-5fa3804e551c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=6ff92caffcdd63681a35134a6770ed3b&auto=format&fit=crop&w=1951&q=80',
@@ -44,7 +45,7 @@ class _DrawerSideNavState extends State<DrawerSideNav> {
             Expanded(
                 child: IconButton(
               onPressed: () {
-                Navigator.popAndPushNamed(context, "/");
+                showLogoutDialogBox(context);
               },
               icon: const Icon(Icons.logout),
             ))
@@ -179,63 +180,6 @@ class _DrawerSideNavState extends State<DrawerSideNav> {
                       title: Text('Angular Tutorial',
                           style: TextStyle(fontSize: 30.0)),
                       subtitle: Text('Angular A-Z tutorial',
-                          style: TextStyle(fontSize: 18.0)),
-                    ),
-                    ButtonBar(
-                      children: [
-                        ElevatedButton(
-                            onPressed: () {}, child: const Text("Play")),
-                        ElevatedButton(
-                            onPressed: () {}, child: const Text("Pause")),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)),
-                color: Colors.red[200],
-                elevation: 10,
-                child: Column(
-                  children: [
-                    const ListTile(
-                      leading: Icon(
-                        Icons.play_circle,
-                        size: 60,
-                      ),
-                      title: Text('Golang Tutorial',
-                          style: TextStyle(fontSize: 30.0)),
-                      subtitle: Text('Golang Basic tutorial for begginer.',
-                          style: TextStyle(fontSize: 18.0)),
-                    ),
-                    ButtonBar(
-                      children: [
-                        ElevatedButton(
-                            onPressed: () {}, child: const Text("Play")),
-                        ElevatedButton(
-                            onPressed: () {}, child: const Text("Pause")),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-              Card(
-                shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)),
-                color: Colors.red[200],
-                elevation: 10,
-                child: Column(
-                  children: [
-                    const ListTile(
-                      leading: Icon(
-                        Icons.play_circle,
-                        size: 60,
-                      ),
-                      title: Text('Java Tutorial',
-                          style: TextStyle(fontSize: 30.0)),
-                      subtitle: Text(
-                          'Complete java package. This includes Core java, JDBC, Servlet, JSP,',
                           style: TextStyle(fontSize: 18.0)),
                     ),
                     ButtonBar(

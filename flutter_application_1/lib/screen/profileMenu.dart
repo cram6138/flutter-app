@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/screen/editUser.dart';
 import 'package:flutter_application_1/screen/userList.dart';
+import 'package:flutter_application_1/screen/userSettings.dart';
 
 class ProfileMenu extends StatefulWidget {
   @override
@@ -95,9 +96,7 @@ class _ProfileMenuState extends State<ProfileMenu>
           child: EditUser(),
         ),
         UserList(),
-        Center(
-          child: Text("Users Settings Tab Clicked"),
-        )
+        UserSettings(),
       ]),
     );
   }

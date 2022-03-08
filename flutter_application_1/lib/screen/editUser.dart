@@ -110,6 +110,7 @@ class _EditUserState extends State<EditUser> {
                     },
                   ),
                   TextFormField(
+                    obscureText: true,
                     decoration: const InputDecoration(
                         labelText: "Password", icon: Icon(Icons.lock)),
                     validator: (value) {
