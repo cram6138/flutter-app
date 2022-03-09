@@ -19,6 +19,7 @@ class _MessageState extends State<Message> {
   ];
 
   String chatMessageVal = "";
+  final textFieldController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -116,6 +117,7 @@ class _MessageState extends State<Message> {
                             color: Colors.blue,
                           ),
                         ),
+                        controller: textFieldController,
                         onChanged: (val) {
                           setState(() {
                             chatMessageVal = val;
@@ -130,6 +132,7 @@ class _MessageState extends State<Message> {
                               messageContent: chatMessageVal,
                               messageType: "Sender"));
                         });
+                        textFieldController.clear();
                         print(chatMessageVal);
                       },
                       child: const Icon(
